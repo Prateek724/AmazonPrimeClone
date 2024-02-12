@@ -1,6 +1,8 @@
 FROM node:19-alpine3.15
-WORKDIR /prime-clone
-COPY . /prime-clone
+WORKDIR /usr/src/app
+COPY package*.json ./             
 RUN npm install
+COPY . .
+RUN npm run 
 EXPOSE 3000
-CMD ["npm","run","dev"]
+CMD [ "node" , "build/server.js" ]
